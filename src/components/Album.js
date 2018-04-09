@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const Album = () => (
-  <section className="album">
-    Album will go here
-  </section>
-);
+class Album extends Component {
+   render() {
+     return (
+       <section className="album">
+
+         {/* Use the params object to access the slug URL parameter. */}
+         {this.props.match.params.slug} Album will go here 
+       </section>
+     );
+   }
+ }
 
 export default Album;

@@ -22,7 +22,15 @@ class App extends Component {
         <main>
            <Route exact path="/" component={Landing} />
            <Route path="/library" component={Library} />
-           <Route path="/album" component={Album} />
+
+           {/* Album route differentiates between different albums
+               by specifying a URL parameter that begins with a :.
+               React Router treats the URL position as a dynamic parameter
+               and its value is passed to the component as a property.
+               Here, a slug is text that's been formatted to be acceptable in
+               a different format.
+            */}
+           <Route path="/album/:slug" component={Album} />
         </main>
       </div>
     );
