@@ -7,14 +7,44 @@ class Album extends Component {
  
      const album = albumData.find( album => {
        {/* Use the params object to access the slug URL parameter. */}
-       return album.slug === this.props.match.params.slug
+       return album.slug === this.props.match.params.slug;
      });
  
      this.state = {
-       album: album
+       album: album,
+       currentSong: album.songs[0],
+       isPlaying: false
      };
+
+     this.audioElement = document.createElement('audio');
+     this.audioElement.src = album.songs[0].audioSrc;
+   }
+
+   play() {
+     this.audioElement.play();
+     this.setState({ isPlaying: true });
    }
  
+   pause() {
+     this.audioElement.pause();
+     this.setState({ isPlaying: false });
+   }   
+ 
+   setSong(song) {
+     this.audioElement.src = song.audioSrc;
+     this.setState({ currentSong: song });
+   }
+
+   handleSongClick(song) {
+     const isSameSong = this.state.currentSong === song;
+     if (this.state.isPlaying && isSameSong) {
+       this.pause();
+     } else {
+       if (!isSameSong) { this.setSong(song); }
+       this.play();
+     }
+   }
+
    render() {
      return (
        <section className="album">
@@ -35,7 +65,7 @@ class Album extends Component {
            <tbody>
 	        {/* Render song list of album */}
 	        {this.state.album.songs.map((song, index) =>
-	              <tr className="song" key={index}>
+		      <tr className="song" key={index} onClick={() => this.handleSongClick(song)} >
 			<td className="song-actions">
                    	   <button>
                      		<span className="song-number">{index+1}</span>
