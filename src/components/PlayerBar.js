@@ -1,6 +1,5 @@
  import React, { Component } from 'react';
  
- {/* Player bar needs previous, play-pause and next buttons, time control and volume control sliders. */}
  {/* HTML for the controls will be added to PlayerBar component render method */}
  class PlayerBar extends Component {
    render() {
@@ -32,8 +31,16 @@
            <div className="total-time">{this.props.duration}</div>
          </section>
          <section id="volume-control">
-           <div className="icon ion-volume-low"></div>
-           <input type="range" className="seek-bar" value="80" />
+           <div className="current-volume">{this.props.currentVolume}</div>
+           <input 
+             type="range" 
+             className="seek-bar" 
+             value={this.props.currentVolume} 
+             max="10" 
+             min="0" 
+             step="0.5" 
+             onChange={this.props.handleVolumeChange}
+           />   
            <div className="icon ion-volume-high"></div>
          </section>
        </section>
