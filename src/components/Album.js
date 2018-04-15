@@ -106,7 +106,7 @@ class Album extends Component {
 	 return "-:--";
 
      var minutes = Math.floor(timeParam / 60);
-     var seconds = timeParam - (minutes * 60);
+     var seconds = (Math.floor(timeParam) % 60);
 
      if (minutes < 10) {minutes = "0" + minutes;}
      if (seconds < 10) {seconds = "0" + seconds;}
@@ -160,7 +160,7 @@ class Album extends Component {
            handleNextClick={() => this.handleNextClick()}
            handleTimeChange={(e) => this.handleTimeChange(e)}
            handleVolumeChange={(e) => this.handleVolumeChange(e)}
-           formatTime={(this.formatTime())}
+           formatTime={(e) => this.formatTime(e)}
          />
        </section>
      );

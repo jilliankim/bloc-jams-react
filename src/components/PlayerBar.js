@@ -18,7 +18,7 @@
            </button>
          </section>
          <section id="time-control"> 
-           <div className="current-time">{this.props.currentTime}</div>
+           <div className="current-time">{this.props.formatTime(this.props.currentTime)}</div>
            <input 
              type="range" 
              className="seek-bar" 
@@ -28,7 +28,7 @@
              step="0.01" 
              onChange={this.props.handleTimeChange}
            />   
-           <div className="total-time">{this.props.duration}</div>
+           <div className="total-time">{this.props.formatTime(this.props.duration)}</div>
          </section>
          <section id="volume-control">
            <div className="current-volume">{this.props.currentVolume}</div>
