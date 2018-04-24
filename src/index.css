@@ -1,5 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Varela+Round');
+
+html {
+  font-size: 16px;
+}
+
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+  font-family: "Varela Round", sans-serif;
+  background-color: rgb(195, 227, 243);
+  overflow-y: scroll;
+}
+
+button:focus, input:focus {
+  outline: none;
 }

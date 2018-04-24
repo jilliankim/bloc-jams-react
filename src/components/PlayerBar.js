@@ -1,22 +1,13 @@
  import React, { Component } from 'react';
+ import { Container, Button, ButtonGroup, Row, Col } from 'reactstrap';
+ import '../styles/PlayerBar.css';
  
- {/* HTML for the controls will be added to PlayerBar component render method */}
  class PlayerBar extends Component {
    render() {
      return (
-       <section className="player-bar">
-         <section id="buttons">
-           <button id="previous" onClick={this.props.handlePrevClick}>
-             <span className="ion-skip-backward"></span>
-           </button>
-           {/* Refactor play-pause icon to reflect the state of play */}
-           <button id="play-pause" onClick={this.props.handleSongClick} >
-             <span className={this.props.isPlaying ? 'ion-pause' : 'ion-play'}></span>
-           </button>
-           <button id="next" onClick={this.props.handleNextClick}>
-             <span className="ion-skip-forward"></span>
-           </button>
-         </section>
+       <Container>
+         <Row >
+         <Col xs="6" sm="4" align="center">
          <section id="time-control"> 
            <div className="current-time">{this.props.formatTime(this.props.currentTime)}</div>
            <input 
@@ -30,8 +21,27 @@
            />   
            <div className="total-time">{this.props.formatTime(this.props.duration)}</div>
          </section>
-         <section id="volume-control">
-           <div className="current-volume">{this.props.currentVolume}</div>
+         </Col>
+         <Col xs="6" sm="4">
+         <ButtonGroup size="lg">
+           <Button id="previous" onClick={this.props.handlePrevClick}>
+             <span className="ion-skip-backward"></span>
+           </Button>
+           <Button id="play-pause" onClick={this.props.handleSongClick} >
+             <span className={this.props.isPlaying ? 'ion-pause' : 'ion-play'}></span>
+           </Button>
+           <Button id="next" onClick={this.props.handleNextClick}>
+             <span className="ion-skip-forward"></span>
+           </Button>
+         </ButtonGroup>
+         </Col>
+         <Col xs="6" sm="4">
+         <section id="volume control">
+           <Row>
+           <Col className="icon ion-volume-low text-left"></Col>
+           <Col className="icon ion-volume-high text-right"></Col>
+           </Row>
+           <Col >
            <input 
              type="range" 
              className="seek-bar" 
@@ -41,9 +51,11 @@
              step="0.5" 
              onChange={this.props.handleVolumeChange}
            />   
-           <div className="icon ion-volume-high"></div>
+           </Col>
          </section>
-       </section>
+        </Col>
+        </Row>
+       </Container>
      );
    }
  }

@@ -1,28 +1,39 @@
-.App {
+@import url('https://fonts.googleapis.com/css?family=Tangerine');
+
+.app-title {
+  font-family: Tangerine, serif;
+  font-size: 400%;
+  font-weight: bold;
+  text-align: center;
+  color: rgb(255, 69, 0);
+  margin-top: 2rem;
+}
+
+nav {
+  background: rgb(195, 227, 243);
+  margin-top: .75rem;
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.main-content {
+  margin-top: 1rem;
+  background-color: grey;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+#nav-landing, #nav-library {
+  color: rgb(228, 80, 106);
 }
 
-.App-title {
-  font-size: 1.5em;
+a:link, a:visited {
+  text-decoration: none;
 }
 
-.App-intro {
-  font-size: large;
+#nav-landing:hover, #nav-library:hover {
+  text-decoration: none;
+  color: rgb(255, 108, 108);
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+a:active {
+  text-decoration: none;
 }
+
