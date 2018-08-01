@@ -1,8 +1,10 @@
-#Bloc Jams React
+# Bloc Jams React - a digital music player built with ReactJS
 #### a digital music player built with ReactJS
- ![screenshot](https://github.com/norsween/bloc-jams-react/public/assets/images/bloc_jams_react.gif)
+
+ ![screenshot](https://github.com/norsween/bloc-jams-react/blob/master/public/assets/images/bloc_jams_react.gif)
+
  ***
-##### Resources:
+### Resources:
 * ReactJS
 * React Router
 * React Bootstrap
@@ -11,16 +13,13 @@
 
  Bloc Jams was completed as part of [Bloc's](https://www.bloc.io/) Web Development Curriculum.
 
-## Available Scripts
+### Available Scripts
 
 To see this project in action, clone the repo locally and then run the command:
 
-### `npm start`
+##### `npm start`
 
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-## Supported Language Features and Polyfills
-
-This project supports a superset of the latest JavaScript standard.
 
